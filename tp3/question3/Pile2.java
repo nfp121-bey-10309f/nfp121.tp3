@@ -99,25 +99,25 @@ public class Pile2<T> implements PileI<T> {
         
         if (o == this)
 			return true;
-
+        
         if (!(o instanceof Pile2)) {
             return false;
         }
-        if (this.taille() != ((Pile2) o).taille()) {
+        if (this.taille() != ((Pile2<T>) o).taille()) {
             return false;
         }
-        if (this.capacite() != ((Pile2) o).capacite()) {
+        if (this.capacite() != ((Pile2<T>) o).capacite()) {
             return false;
         }
 
-        if (this.hashCode() != ((Pile2) o).hashCode()) {
+        if (this.hashCode() != ((Pile2<T>) o).hashCode()) {
             return false;
         }
         
         // si les elements sont identiques a la meme position
         for (int i = 0; i <= this.taille() -1 ; i++) {
             if (this.stk.elementAt(i) != null) {
-                if (!(this.stk.elementAt(i).equals(((Pile2) o).stk.elementAt(i)))) {
+                if (!(this.stk.elementAt(i).equals(((Pile2<T>) o).stk.elementAt(i)))) {
                     return false;
                 }
             }
